@@ -7,14 +7,19 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
+
+
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AboutComponent,
     NavComponent,
     RegisterComponent,
     LoginComponent,
@@ -24,6 +29,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,    
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
