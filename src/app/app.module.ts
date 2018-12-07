@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -23,7 +24,11 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarouselModule.forRoot()
+    FlexLayoutModule,
+    CarouselModule.forRoot(),
+    
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
