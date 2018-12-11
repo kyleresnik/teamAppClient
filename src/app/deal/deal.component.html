@@ -1,0 +1,10 @@
+<h1 STYLE="TEXT-ALIGN: CENTER;">DEALS DEALS DEALS!!!</h1>
+<br>
+  <ul>
+    <li *ngFor="let deal of deal">
+      <p>{{ deal.owner_username }}</p>
+      <p>{{ deal.title }}</p>
+      <p>{{ deal.text }}</p>
+      <button (click)="deleteDeal(deal.id)" *ngIf="token !== null || undefined"> Delete </button>
+    </li>
+  </ul>
