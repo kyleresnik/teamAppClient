@@ -12,13 +12,26 @@ import { AboutComponent } from './about/about.component';
 
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { DealComponent } from './deal/deal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
+
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
+    DealComponent,
+    AdminComponent,
+    ProfileComponent,
+    FooterComponent,
     AboutComponent,
     NavComponent,
     RegisterComponent,
@@ -29,12 +42,19 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,    
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    
+
+    // FlexLayoutModule,    
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent,]
