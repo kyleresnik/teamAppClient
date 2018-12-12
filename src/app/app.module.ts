@@ -19,7 +19,7 @@ import { LoginComponent } from './login/login.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
