@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl} from '@angular/forms'
+import { FormBuilder, FormGroup, FormControl, Validators, NgForm} from '@angular/forms'
+import { first } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +11,49 @@ import { FormBuilder, FormGroup, FormControl} from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  constructor(private _fb: FormBuilder) { }
+  loading = false;
+  submitted = false;
+  returnUrl: string;
+  error = '';
+
+  constructor(
+    private _fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    // private authenticationService: AuthenticationService
+    ) { }
 
   ngOnInit() {
     this.loginForm = this._fb.group({
-      username: new FormControl(),
-      password: new FormControl(),
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     })
+    // this.authenticationService.logout();
+
+    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
+
+  // get f() { return this.loginForm.controls; }
+
+  //   onSubmit() {
+  //       this.submitted = true;
+
+  //       if (this.loginForm.invalid) {
+  //           return;
+  //       }
+
+  //       this.loading = true;
+  //       this.authenticationService.login(this.f.email.value, this.f.password.value)
+  //           .pipe(first())
+  //           .subscribe(
+  //               data => {
+  //                   this.router.navigate([this.returnUrl]);
+  //               },
+  //               error => {
+  //                   this.error = error;
+  //                   this.loading = false;
+  //               });
+  //   }
+
 
 }
