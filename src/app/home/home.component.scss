@@ -1,0 +1,27 @@
+.controllerImg {
+  height: 6em;
+  width: 6em;
+}
+
+.gbImg {
+  height: 6em;
+}
+
+.slideImg {
+  display: block;
+  width: 100%;
+}
+
+.whatIs {
+  margin-right: 25em;
+  margin-left: 25em;
+}
+
+.gameCarousel {
+  min-height: 500px;
+  margin-bottom: 60px;
+
+  .cSlide {
+    height: 35em;
+  }
+}
