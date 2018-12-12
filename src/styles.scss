@@ -27,6 +27,7 @@ $redBadgeClient-theme: mat-light-theme($redBadgeClient-primary, $redBadgeClient-
 @include angular-material-theme($redBadgeClient-theme);
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';    
 
 body, html {
     height: 100%;

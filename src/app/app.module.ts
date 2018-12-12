@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-// import {MatDialogModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatCardModule, MatMenuModule, MatToolbarModule, MatOptionModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,6 @@ import { FooterComponent } from './footer/footer.component';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { MatFormFieldModule, MatOptionModule, MatSelectModule, MatFormFieldControl } from '@angular/material';
 import { DemoMaterialModule } from './material-module'
 
 @NgModule({
@@ -31,7 +30,8 @@ import { DemoMaterialModule } from './material-module'
     AboutComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,12 +43,18 @@ import { DemoMaterialModule } from './material-module'
     MatFormFieldModule,
     MatOptionModule,
     // FlexLayoutModule,    
-    // MatDialogModule,
-    CarouselModule.forRoot(),
-    MatSelectModule,
-    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule,
     MatFormFieldModule,
-    DemoMaterialModule
+    MatInputModule,
+    MatRippleModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatMenuModule,
+    MatToolbarModule,
+    CarouselModule.forRoot()
 
   ],
   providers: [],
