@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm} from '@angular/forms'
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +18,10 @@ export class LoginComponent implements OnInit {
   error = '';
 
   constructor(
-    private _fb: FormBuilder,
+    private _fb: FormBuilder, 
     private route: ActivatedRoute,
     private router: Router,
-    // private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService
     ) { }
 
   ngOnInit() {
@@ -28,32 +29,32 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     })
-    // this.authenticationService.logout();
+    this.authenticationService.logout();
 
-    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  // get f() { return this.loginForm.controls; }
+  get f() { return this.loginForm.controls; }
 
-  //   onSubmit() {
-  //       this.submitted = true;
+    onSubmit() {
+        this.submitted = true;
 
-  //       if (this.loginForm.invalid) {
-  //           return;
-  //       }
+        if (this.loginForm.invalid) {
+            return;
+        }
 
-  //       this.loading = true;
-  //       this.authenticationService.login(this.f.email.value, this.f.password.value)
-  //           .pipe(first())
-  //           .subscribe(
-  //               data => {
-  //                   this.router.navigate([this.returnUrl]);
-  //               },
-  //               error => {
-  //                   this.error = error;
-  //                   this.loading = false;
-  //               });
-  //   }
+        this.loading = true;
+        this.authenticationService.login(this.f.email.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.error = error;
+                    this.loading = false;
+                });
+    }
 
 
 }
