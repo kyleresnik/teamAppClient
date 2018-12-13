@@ -1,29 +1,21 @@
 .login-form {
-    // background-image: url('../assets/pexels-photo-59599.jpeg');
     font-weight: bold;
     background-size: cover;
     height: 35vh;
-    width: 78vw;
+    width: 50vw;
     padding: 1em;
     border-radius: 0.4em;
-    //background: lightgrey;
     margin-top: 3em;
-    // background: rgba(255, 255, 255, 0.333);
   }
   
   .transparentBox {
     border-radius: 0.4em;
     background-image: url('https://cdn.dribbble.com/users/13774/screenshots/1188897/feedbackloop.gif');
     background-size: fill;
-    background-repeat: repeat;
-    // background: rgba(255, 255, 255, 0.333);
+    background-repeat: no-repeat;
     text-shadow: 1px 1px 1px white;
     margin: 0;
     margin-top: 2em;
     padding: 0.5em;
     height: 63vh;
-  }
-
-  body {
-    background-color: lightgrey;
   }
