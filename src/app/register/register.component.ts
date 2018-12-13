@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { AuthenticationService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
+import { AlertService } from '../services/alert.service';
+
 
 @Component({
   selector: 'app-register',
@@ -17,10 +21,14 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private router: Router,
-    // private authentcationService: AuthentcationService,
-    // private userService: UserService,
-    // private alertService: AlertService
-    ) { }
+    private authenticationService: AuthenticationService,
+    private userService: UserService, 
+    private alertService: AlertService
+    ) { 
+      if(this.authenticationService.currentUserValue) {
+        this.router.navigate(['/']);
+      }
+    }
 
   ngOnInit() {
     this.registerForm = this._fb.group({
@@ -31,30 +39,28 @@ export class RegisterComponent implements OnInit {
     })
   }
   
-//   get f() {return this.registerForm.controls}
+  get f() {return this.registerForm.controls}
 
-//   onSubmit() {
-//     this.submitted = true;
+  onSubmit() {
+    this.submitted = true;
 
-//     if (this.registerForm.invalid) {
-//       return;
-//     }
+    if (this.registerForm.invalid) {
+      return;
+    }
 
-//     this.loading = true;
-//     this.userService.register
-// (this.registerForm.value)
-//               .pipe(first())
-//               .subscribe(
-//                 data => {
-//                   this.alertService.success
-// ('Registration successful', true);
-//                   this.router.navigate(['/login'])
-//                 },
-//                 error => {
-//                   this.alertService.error(error);
-//                   this.loading = false;
-//                 })
+    this.loading = true;
+    this.userService.register(this.registerForm.value)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.alertService.success('Registration successful', true);
+                  this.router.navigate(['/login'])
+                },
+                error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+                })
 
-//   }
+  }
 
 }

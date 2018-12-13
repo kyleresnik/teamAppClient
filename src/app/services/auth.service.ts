@@ -1,24 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Admin } from '../models/admin.model';
+
+import { User } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    constructor(private http: HttpClient) { }
+    private currentUserSubject: BehaviorSubject<User>;
+    public currentUser: Observable<User>;
 
-    admin: Admin;
+    constructor(private http: HttpClient) { 
+        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')))
+        this.currentUser = this.currentUserSubject.asObservable();
+    }
 
-    login(email: string, password: string) {
-        return this.http.post<any>('https://efa-gardenapp-backend.herokuapp.com/api/auth/login', { email: email, password: password })
-            .pipe(map(admin => {
-                if (admin && admin.token) {
-                    sessionStorage.setItem('currentUser', admin.token);
+    public get currentUserValue(): User {
+        return this.currentUserSubject.value;
+    }
+
+    login(username: string, password: string) {
+        return this.http.post<any>('https://savepoint-server.herokuapp.com/user/login', { username: username, password: password })
+            .pipe(map(user => {
+                if (user && user.token) {
+                    sessionStorage.setItem('currentUser', user.token);
                 }
 
-                return admin;
+                return user;
             }));
-    }
+    } 
 
     logout() {
         sessionStorage.removeItem('currentUser');
