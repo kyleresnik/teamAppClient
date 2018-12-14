@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
-import { MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatCardModule, MatMenuModule, MatToolbarModule, MatOptionModule} from '@angular/material';
+import { MatDialogModule, MatSelectModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatCardModule, MatMenuModule, MatToolbarModule, MatOptionModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AppRoutingModule } from './app-routing.module';
@@ -56,7 +56,7 @@ import { DemoMaterialModule } from './material-module'
     MatToolbarModule,
     CarouselModule.forRoot(),
     DemoMaterialModule,
-
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent,]
