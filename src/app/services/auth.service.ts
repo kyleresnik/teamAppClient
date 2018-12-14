@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
+
+const httpOptions = {
+    headers: new HttpHeaders ({
+        'Content-Type' : 'application/json'
+    })
+}
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -20,7 +26,7 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>('https://savepoint-server.herokuapp.com/user/login', { username: username, password: password })
+        return this.http.post<any>('https://savepoint-server.herokuapp.com/user/signin', { username: username, password: password }, httpOptions)
             .pipe(map(user => {
                 if (user && user.token) {
                     sessionStorage.setItem('currentUser', user.token);

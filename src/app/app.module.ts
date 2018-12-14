@@ -54,9 +54,9 @@ import { DemoMaterialModule } from './material-module'
     MatCardModule,
     MatMenuModule,
     MatToolbarModule,
-    MatSelectModule,
-    CarouselModule.forRoot()
-
+    CarouselModule.forRoot(),
+    DemoMaterialModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent,]
