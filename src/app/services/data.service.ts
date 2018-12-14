@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DataService {
-  private dealUrl = 'https://efa-gardenapp-backend.herokuapp.com/api/product/?limit=100'
+  private dealUrl = 'https://savepoint-server.herokuapp.com/post/getall'
 
   constructor(private _http: HttpClient) { }
 
@@ -27,7 +27,7 @@ export class DataService {
   deleteDeal(id) {
     console.log(id);
     console.log(`${this.dealUrl}/${id}`);
-    let deleteUrl = `https://efa-gardenapp-backend.herokuapp.com/api/product/${id}`
+    let deleteUrl = `https://savepoint-server.herokuapp.com/post/${id}`
     return this._http.delete(deleteUrl, httpOptions);
   }
 }

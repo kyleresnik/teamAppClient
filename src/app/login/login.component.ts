@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm} from '@angular/forms'
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private _fb: FormBuilder, 
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private AuthService: AuthService
     ) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     })
-    this.authenticationService.logout();
+    this.AuthService.logout();
 
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         }
 
         this.loading = true;
-        this.authenticationService.login(this.f.email.value, this.f.password.value)
+        this.AuthService.login(this.f.username.value, this.f.password.value)
             .pipe(first())
             .subscribe(
                 data => {
