@@ -1,6 +1,6 @@
 header {
     background: #575757;
-    height: 4em;
+    height: 4.5em;
     opacity: .9;
 
     .logo {
@@ -24,7 +24,8 @@ header {
 
                     &:hover {
                         background: #822626;
-                        border-radius: 2em;
+                        border-radius: .6em;
+                        opacity: .9;
                     }
                 }
             }

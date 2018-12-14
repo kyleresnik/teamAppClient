@@ -1,4 +1,5 @@
-<section style="text-align: center; margin: 4em;">
+<mat-card>
+<section style="text-align: center;">
   <div>
     <img class="controllerImg" src="assets/Video-Game-Controller-Icon.svg">
     <br>
@@ -6,6 +7,7 @@
     <p>"The best deals service for gaming geeks!"</p>
   </div>
 </section>
+</mat-card>
 
 <carousel data-interval="10000" class="gameCarousel">
     <slide class="cSlide">
@@ -31,20 +33,41 @@
     </slide>
 </carousel>
 
-<section style="text-align: center; margin: 6em;">
+<mat-card>
+<section style="text-align: center;">
   <div>
     <img class="gbImg" src="assets/Game-1294305.svg">
     <br>
     <br>
     <div class="whatIs">
       <h2>What is SavePoint?</h2>
-      <p style="text-align: justify; padding-top: 1em;">SavePoint is a web app made by geeks, for geeks.
+      <p style="text-align: center;">SavePoint is a web app made by geeks, for geeks.
       Here at SavePoint we know how much gaming means to you, as well as good deals on
       gaming products. At SavePoint, </p>
       </div>
   </div>
 </section>
+</mat-card>
 
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+    <mat-form-field>
+      <input matInput placeholder="First name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Age">
+    </mat-form-field>
+  </mat-expansion-panel>
 
 
   <!-- <carousel [interval]="myInterval" [(activeSlide)]="activeSlideIndex" >

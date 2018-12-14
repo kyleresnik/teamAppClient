@@ -67,8 +67,8 @@ import { AuthService } from './services/auth.service';
     MatMenuModule,
     MatToolbarModule,
     MatSelectModule,
+    DemoMaterialModule,
     CarouselModule.forRoot()
-
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent,]
