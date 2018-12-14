@@ -17,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { DemoMaterialModule } from './material-module'
+import { DemoMaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
@@ -54,9 +54,9 @@ import { DemoMaterialModule } from './material-module'
     MatCardModule,
     MatMenuModule,
     MatToolbarModule,
-    CarouselModule.forRoot(),
+    MatSelectModule,
     DemoMaterialModule,
-    MatSelectModule
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent,]

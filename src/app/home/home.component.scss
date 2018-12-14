@@ -12,10 +12,10 @@
   width: 100%;
 }
 
-.whatIs {
-  margin-right: 25em;
-  margin-left: 25em;
-}
+// .whatIs {
+//   margin-right: 25em;
+//   margin-left: 25em;
+// }
 
 .gameCarousel {
   min-height: 500px;
@@ -25,3 +25,9 @@
     height: 35em;
   }
 }
+
+mat-card {    
+  max-width: 50%;     
+  margin: 1em auto;   
+  text-align: center;    
+}    
