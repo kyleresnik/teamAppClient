@@ -1,7 +1,6 @@
 export class Deal {
-owner_id: number;
-owner_username: string;
 title: string;
 text: string;
-token: string;
+userId: number;
+public token: string;
 }

@@ -1,7 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
-import { MatDialogModule, MatSelectModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatCardModule, MatMenuModule, MatToolbarModule, MatOptionModule} from '@angular/material';
+import { MatDialogModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatRippleModule,
+        MatCardModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatOptionModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +28,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { DemoMaterialModule } from './material-module';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +70,7 @@ import { DemoMaterialModule } from './material-module';
     DemoMaterialModule,
     CarouselModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent,]
 })
 export class AppModule { }
