@@ -20,6 +20,10 @@ export class AuthenticationService {
             }));
     }
 
+    loggedIn(){
+        return !!localStorage.getItem('token')
+    };
+
     logout() {
         sessionStorage.removeItem('currentUser');
     }
