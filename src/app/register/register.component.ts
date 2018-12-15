@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 import { AlertService } from '../services/alert.service';
 
@@ -21,11 +21,11 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private router: Router,
-    private authenticationService: AuthenticationService,
+    private AuthService: AuthService,
     private userService: UserService, 
     private alertService: AlertService
     ) { 
-      if(this.authenticationService.currentUserValue) {
+      if(this.AuthService.currentUserValue) {
         this.router.navigate(['/']);
       }
     }

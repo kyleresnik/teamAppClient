@@ -12,11 +12,12 @@ const httpOptions = {
 }
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationService {
+export class AuthService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 
     constructor(private http: HttpClient) { 
+        console.log(this.currentUser)
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')))
         this.currentUser = this.currentUserSubject.asObservable();
     }
@@ -28,17 +29,17 @@ export class AuthenticationService {
     login(username: string, password: string) {
         return this.http.post<any>('https://savepoint-server.herokuapp.com/user/signin', { username: username, password: password }, httpOptions)
             .pipe(map(user => {
-                if (user && user.token) {
-                    sessionStorage.setItem('currentUser', user.token);
+                if (user && user.sessionToken) {
+                    sessionStorage.setItem('currentUser', user.sessionToken);
                 }
-
+                console.log(user)
                 return user;
             }));
     } 
 
-    loggedIn(){
-        return !!localStorage.getItem('token')
-    };
+    loggedIn() {
+        return !!localStorage.getItem('sessionToken')
+    }
 
     logout() {
         sessionStorage.removeItem('currentUser');
