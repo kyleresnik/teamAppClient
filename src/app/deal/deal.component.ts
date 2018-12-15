@@ -10,10 +10,6 @@ import {Deal} from '../models/deal.model'
 export class DealComponent implements OnInit {
 
   deal: Deal[];
-  owner_id: number;
-  owner_username: string;
-  title: string;
-  text: string;
   token: string;
 
   constructor(private data: DataService) { }

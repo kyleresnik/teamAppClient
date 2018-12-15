@@ -3,5 +3,6 @@ export class User {
     lastName: string;
     username: string;
     password: string;
+    // userRole: string;
     public token: string;
     }
