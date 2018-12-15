@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Deal } from '../models/deal.model';
 import { Observable } from 'rxjs';
 
-// let token = JSON.parse(sessionStorage.getItem('currentUser'))
+// let sessionToken = JSON.parse(sessionStorage.getItem('currentUser'))
 
 const httpOptions = {
   headers: new HttpHeaders({

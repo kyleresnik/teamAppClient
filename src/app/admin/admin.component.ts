@@ -15,7 +15,7 @@ export class AdminComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     error = '';
-    // admin = {};
+    admin = {};
 
     constructor(
         private formBuilder: FormBuilder,

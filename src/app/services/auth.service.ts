@@ -35,7 +35,7 @@ export class AuthService {
                 console.log(user)
                 return user;
             }));
-    } 
+    }
 
     loggedIn() {
         return !!localStorage.getItem('sessionToken')
