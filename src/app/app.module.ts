@@ -35,9 +35,9 @@ import { DemoMaterialModule } from './material-module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -57,7 +57,6 @@ import { DemoMaterialModule } from './material-module';
     MatSelectModule,
     DemoMaterialModule,
     CarouselModule.forRoot()
-
   ],
   providers: [],
   bootstrap: [AppComponent,]

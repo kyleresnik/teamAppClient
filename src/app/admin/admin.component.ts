@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from '../services/auth.service'
+import { AuthenticationService } from '../services/admin.auth.service';
 
 @Component({
   selector: 'app-admin',
