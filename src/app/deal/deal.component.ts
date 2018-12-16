@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import {Deal} from '../models/deal.model'
 
 @Component({
@@ -7,14 +8,18 @@ import {Deal} from '../models/deal.model'
   templateUrl: './deal.component.html',
   styleUrls: ['./deal.component.scss']
 })
-export class DealComponent implements OnInit {
 
+export class DealComponent implements OnInit {
+  public dealForm: FormGroup
+  @Input() id:number;
+  @Input() title:string;
   deal: Deal[];
   token: string;
 
-  constructor(private data: DataService) { }
+  constructor(private fb: FormBuilder, private data: DataService) { }
 
   ngOnInit() {
+    this.createForm();
     this.data.getDeals().subscribe(data => {
       this.deal = data
       console.log(this.deal)
@@ -34,5 +39,19 @@ export class DealComponent implements OnInit {
     else {
       alert('Cannot delete item.')
     };
-  } ;
+  };
+
+  createForm() {
+    this.dealForm = this.fb.group({
+      dealText: new FormControl(),
+      dealTitle: new FormControl(),
+      userId: this.id
+    })
+  }
+
+  onSubmit() {
+    this.data.createDeal(this.dealForm.value).subscribe(createPostFromServer => {
+      console.log(createPostFromServer)
+    })
+  }
 };
