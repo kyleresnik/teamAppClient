@@ -1,4 +1,38 @@
 <h1 STYLE="TEXT-ALIGN: CENTER;">DEALS DEALS DEALS!!!</h1>
+
+<mat-card style="text-align: center;">
+  <div class="example-container">
+    <mat-card-content>
+      <form [formGroup]="dealForm" (ngSubmit)="onSubmit()" >
+        <mat-form-field>
+          <input matInput placeholder="Title" type="text" formControlName="dealTitle">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Tell us about your deal!" formControlName="dealText">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit">Post Deal Article</button>
+      </form>
+    </mat-card-content>
+  </div>
+</mat-card>
+
+<!-- <h4>Create Player for {{title}}</h4>
+<form [formGroup]="dealForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+      <label for="dealTitle">Player Name</label>
+      <input type="text" formControlName="dealTitle">
+  </div>
+
+  <div class="form-group">
+      <label for="dealText">Jersey Number</label>
+      <input type="text" formControlName="dealText" name="dealText">
+  </div>
+  <button type="submit">Submit</button>
+</form> -->
+
 <br>
   <ul>
     <li *ngFor="let deal of deal">
