@@ -24,10 +24,10 @@ export class UserService {
         getById(id: number) {
             return this.http.get(`` + id);
         }
-    
-        register(user: User) : Observable<User[]> {
-            // console.log(user);
-            return this.http.post<User[]>(`${this._dbUrl}user/signup`, user, httpOptions);
+  
+        register(user: User){
+            console.log(user);
+            return this.http.post(`${this._dbUrl}user/signup`, user);
         }
     
         // update(user: User) {
@@ -46,6 +46,4 @@ export class UserService {
         getProfile() : Observable <Profile[]> {
             return this.http.get<Profile[]>(`${this._dbUrl}profile/getall`)
           }
-
-    
 }
