@@ -33,6 +33,7 @@
   <button type="submit">Submit</button>
 </form> -->
 
+<mat-card style="margin: 5em; padding: 1em;">
 <br>
   <ul>
     <li *ngFor="let deal of deal">
@@ -42,3 +43,4 @@
       <button (click)="deleteDeal(deal.id)" *ngIf="token !== null || undefined"> Delete </button>
     </li>
   </ul>
+</mat-card>
