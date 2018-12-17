@@ -43,14 +43,15 @@ export class DealComponent implements OnInit {
 
   createForm() {
     this.dealForm = this.fb.group({
-      dealText: new FormControl(),
-      dealTitle: new FormControl(),
-      userId: this.id
+      text: new FormControl(),
+      title: new FormControl(),
+      // userId: this.id
     })
   }
 
   onSubmit() {
-    this.data.createDeal(this.dealForm.value).subscribe(createPostFromServer => {
+    console.log(this.dealForm.value)
+    this.data.createDeal(this.dealForm.value).subscribe((createPostFromServer) => {
       console.log(createPostFromServer)
     })
   }

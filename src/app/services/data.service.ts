@@ -29,10 +29,10 @@ export class DataService {
     console.log(`${this.dealUrl}/${id}`);
     let deleteUrl = `https://savepoint-server.herokuapp.com/post/${id}`
     return this._http.delete(deleteUrl, httpOptions);
-  }
+  } 
 
-  createDeal(deal: Deal) {
-    return this._http.post(
+  createDeal(deal) : Observable <Deal[]> {
+    return this._http.post<Deal[]>(
       'https://savepoint-server.herokuapp.com/post/newthread',
        deal, httpOptions);
   }
