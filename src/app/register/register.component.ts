@@ -53,10 +53,12 @@ export class RegisterComponent implements OnInit {
           .pipe(first())
           .subscribe(
               data => {
+                  console.log("did we make it here?")
                   this.alertService.success('Registration successful', true);
                   this.router.navigate(['/login'])
                 },
                 error => {
+                  console.log("we made it here")
                   this.alertService.error(error);
                   this.loading = false;
                 })

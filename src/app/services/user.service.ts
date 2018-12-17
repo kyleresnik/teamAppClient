@@ -26,7 +26,7 @@ export class UserService {
         }
     
         register(user: User) : Observable<User[]> {
-            console.log(user);
+            // console.log(user);
             return this.http.post<User[]>(`${this._dbUrl}user/signup`, user, httpOptions);
         }
     
