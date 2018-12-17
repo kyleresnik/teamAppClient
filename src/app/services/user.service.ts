@@ -24,7 +24,7 @@ export class UserService {
         getById(id: number) {
             return this.http.get(`` + id);
         }
-    
+  
         register(user: User){
             console.log(user);
             return this.http.post(`${this._dbUrl}user/signup`, user);
