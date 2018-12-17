@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
-import { Observable } from 'rxjs';
+import { Profile } from '../models/profile.model';
+import { Observable } from 'rxjs'; 
 
 const httpOptions = {
     headers: new HttpHeaders ({
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json',
+        'Authorization': sessionStorage.getItem('currentUser')
     })
 }
 
@@ -34,6 +36,12 @@ export class UserService {
     
         delete(id: number) {
             return this.http.delete(`` + id);
+        }
+
+        createProfile(id) : Observable <Profile[]> {
+            return this.http.post<Profile[]>(
+                `${this._dbUrl}profile/newprofile`,
+            id, httpOptions);
         }
 
     
