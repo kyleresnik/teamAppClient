@@ -17,6 +17,11 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    this.us.getProfile().subscribe(us => {
+      this.profile = us
+      console.log(this.profile)
+    });
+    
   }
 
   createForm() {

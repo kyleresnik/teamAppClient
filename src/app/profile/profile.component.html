@@ -19,6 +19,17 @@
         <mat-option value="option">Other</mat-option>
       </mat-select>
     </mat-form-field>
+    <br>
     <button mat-raised-button color="primary" type="submit" *ngIf="token !== null || undefined">Confirm Profile</button>
   </form>
 </div>
+
+<br>
+  <ul>
+    <li *ngFor="let profile of profile">
+      <p>{{ profile.bio }}</p>
+      <p>{{ profile.twHandle }}</p>
+      <p>{{ profile.fbUrl }}</p>
+      <button (click)="deleteDeal(profile.id)" *ngIf="token !== null || undefined"> Delete </button>
+    </li>
+  </ul>

@@ -43,6 +43,9 @@ export class UserService {
                 `${this._dbUrl}profile/newprofile`,
             id, httpOptions);
         }
+        getProfile() : Observable <Profile[]> {
+            return this.http.get<Profile[]>(`${this._dbUrl}profile/getall`)
+          }
 
     
 }
