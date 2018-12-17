@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Profile } from '../models/profile.model';
 
 @Component({
   selector: 'app-profile',
@@ -6,7 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor() { }
+  public profileForm: FormGroup;
+  profile: Profile[];
+  token: string;
+
+  constructor(private fb: FormBuilder, private us: UserService) { }
+
   ngOnInit() {
+    this.createForm();
   }
+
+  createForm() {
+    this.profileForm = this.fb.group({
+      bio: new FormControl(),
+      twHandle: new FormControl(),
+      fbUrl: new FormControl()
+    })
+  }
+
+  onSubmit() {
+    this.us.createProfile(this.profileForm.value).subscribe((createProfileFromServer) => {
+      console.log(createProfileFromServer)
+    })
+  }
+
 }
