@@ -41,6 +41,7 @@
       <p>{{ deal.title }}</p>
       <p>{{ deal.text }}</p>
       <button (click)="deleteDeal(deal.id)" *ngIf="token !== null || undefined"> Delete </button>
+      <button (click)="updateDeal(deal.id)" *ngIf="token !== null || undefined"> Update </button>
     </li>
   </ul>
 </mat-card>

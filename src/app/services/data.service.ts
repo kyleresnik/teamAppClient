@@ -27,7 +27,7 @@ export class DataService {
   deleteDeal(id) {
     console.log(id);
     console.log(`${this.dealUrl}/${id}`);
-    let deleteUrl = `https://savepoint-server.herokuapp.com/post/${id}`
+    let deleteUrl = `https://savepoint-server.herokuapp.com/post/delete/${id}`
     return this._http.delete(deleteUrl, httpOptions);
   } 
 
