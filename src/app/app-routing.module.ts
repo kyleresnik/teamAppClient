@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -33,13 +34,19 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     component: ProfileComponent
   },
 ]
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  }
+
+];
 
   @NgModule({
   imports: [RouterModule.forRoot(routes)],

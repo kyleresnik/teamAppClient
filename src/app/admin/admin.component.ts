@@ -15,44 +15,45 @@ export class AdminComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     error = '';
-    admin = {};
-
+  
     constructor(
-        private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
-        private authService: AuthService) {}
-
+      private _fb: FormBuilder, 
+      private route: ActivatedRoute,
+      private router: Router,
+      private AuthService: AuthService
+      ) { }
+  
     ngOnInit() {
-        this.loginForm = this.formBuilder.group({
-            email: ['', Validators.required],
-            password: ['', Validators.required]
-        });
-
-        this.authService.logout();
-
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+      this.loginForm = this._fb.group({
+        username: ['', Validators.required],
+        password: ['', Validators.required],
+      })
+      this.AuthService.logout();
+  
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
-
+  
     get f() { return this.loginForm.controls; }
-
-    onSubmit() {
-        this.submitted = true;
-
-        if (this.loginForm.invalid) {
-            return;
-        }
-
-        this.loading = true;
-        this.authService.login(this.f.email.value, this.f.password.value)
-            .pipe(first())
-            .subscribe(
-                data => {
-                    this.router.navigate([this.returnUrl]);
-                },
-                error => {
-                    this.error = error;
-                    this.loading = false;
-                });
-    }
-}
+  
+      onSubmit() {
+          this.submitted = true;
+  
+          if (this.loginForm.invalid) {
+              return;
+          }
+  
+          this.loading = true;
+          this.AuthService.login(this.f.username.value, this.f.password.value)
+              .pipe(first())
+              .subscribe(
+                  data => {
+                      this.router.navigate(["/dashboard"]);
+                  },
+                  error => {
+                      this.error = error;
+                      this.loading = false;
+                  });
+      }
+  
+  
+  }

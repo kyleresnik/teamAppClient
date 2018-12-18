@@ -12,8 +12,10 @@ export class ProfileComponent implements OnInit {
   public profileForm: FormGroup;
   profile: Profile[];
   token: string;
+  tempProfileId: number;
+  createdClicked = false;
 
-  constructor(private fb: FormBuilder, private us: UserService) { }
+  constructor(private fb: FormBuilder, private us: UserService,) { }
 
   ngOnInit() {
     this.createForm();
@@ -31,6 +33,26 @@ export class ProfileComponent implements OnInit {
       fbUrl: new FormControl()
     })
   }
+
+  getProfile():void{
+    this.us.getProfile()
+    .subscribe(Profile => this.profile = Profile)
+    console.log(this.profile)
+  }
+
+  clickedButton(id) {
+    this.createdClicked = !this.createdClicked;
+    this.tempProfileId = id;
+  }
+
+  deleteProfile(id){
+    if (sessionStorage.getItem('currentUser') !== null || undefined){
+      this.us.deleteProfile(id).subscribe((res: any) => {console.log(res); this.getProfile()})
+    }
+    else {
+      alert('Cannot delete item.')
+    };
+  };
 
   onSubmit() {
     this.us.createProfile(this.profileForm.value).subscribe((createProfileFromServer) => {

@@ -1,35 +1,57 @@
-<div class="example-container">
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input matInput placeholder="Bio:" formControlName="bio">
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <input matInput placeholder="Twitter Handle:" formControlName="twHandle">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput placeholder="Facebook URL:" formControlName="fbUrl">
-      </mat-form-field>  
-      <br>
-    <mat-form-field>
-      <mat-select placeholder="Gender">
-        <mat-option value="option">Male</mat-option>
-        <mat-option value="option">Female</mat-option>
-        <mat-option value="option">Other</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <button mat-raised-button color="primary" type="submit" *ngIf="token !== null || undefined">Confirm Profile</button>
-  </form>
-</div>
+<mat-grid-list cols="12" rowHeight="25em">
+  <mat-grid-tile colspan="4" rowspan="1">
+    <mat-card class="createCard">
+      <mat-card-title>Create a Profile!!</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input matInput placeholder="Bio:" formControlName="bio">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Twitter Handle:" formControlName="twHandle">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Facebook URL:" formControlName="fbUrl">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-select placeholder="Gender">
+              <mat-option value="option">Male</mat-option>
+              <mat-option value="option">Female</mat-option>
+              <mat-option value="option">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="primary" type="submit" *ngIf="token !== null || undefined">Confirm Profile</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
 
-<br>
-  <ul>
-    <li *ngFor="let profile of profile">
-      <p>{{ profile.bio }}</p>
-      <p>{{ profile.twHandle }}</p>
-      <p>{{ profile.fbUrl }}</p>
-      <button (click)="deleteDeal(profile.id)" *ngIf="token !== null || undefined"> Delete </button>
-    </li>
-  </ul>
+  <mat-grid-tile colspan="8" rowspan="2" class="profileList">
+    <mat-card class="profileCard">
+      <mat-card-title>Profiles!</mat-card-title>
+      <mat-card-content>
+        <mat-list *ngFor="let profile of profile">
+          <h3 mat-subheader>Bio</h3>
+          <mat-list-item role="listitem">{{ profile.bio }}</mat-list-item>
+          <mat-divider></mat-divider>
+          <h3 mat-subheader>twHandle</h3>
+          <mat-list-item role="listitem">{{ profile.twHandle }}</mat-list-item>
+          <mat-divider></mat-divider>
+          <h3 mat-subheader>fbUrl</h3>
+          <mat-list-item role="listitem">{{ profile.fbUrl }}</mat-list-item>
+          
+            <button mat-raised-button color="accent" (click)="clickedButton(profile.id)" *ngIf="token !== null || undefined">
+              Update </button>
+            <button mat-raised-button color="warn" (click)="deleteProfile(profile.id)" *ngIf="token !== null || undefined">
+              Delete </button>
+          
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <app-profile-update *ngIf="createdClicked" [id]="tempProfileId"></app-profile-update>

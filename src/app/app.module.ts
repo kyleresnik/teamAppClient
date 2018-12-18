@@ -31,6 +31,9 @@ import { DemoMaterialModule } from './material-module';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
 import { UpdateDealComponent } from './update-deal/update-deal.component';
+import { ProfileUpdateComponent } from './profile-update/profile-update.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UsersService } from './admin/services/users.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { UpdateDealComponent } from './update-deal/update-deal.component';
     HomeComponent,
     NavComponent,
     UpdateDealComponent,
-
+    ProfileUpdateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -71,9 +75,10 @@ import { UpdateDealComponent } from './update-deal/update-deal.component';
     MatToolbarModule,
     MatSelectModule,
     DemoMaterialModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, UsersService],
   bootstrap: [AppComponent,]
 })
 export class AppModule { }
