@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-deal',
@@ -10,6 +11,7 @@ import { DataService } from '../services/data.service';
 export class UpdateDealComponent implements OnInit {
   public dealEditForm: FormGroup;
   @Input() id: number;
+  private _router: Router
   token: string;
 
   constructor(private fb: FormBuilder, private ds: DataService) { }
@@ -27,13 +29,11 @@ export class UpdateDealComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.ds.updateDeal(this.dealEditForm.value).subscribe((createDealFromServer) => {
-      console.log(createDealFromServer)
+    this.ds.updateDeal(this.dealEditForm.value).subscribe((updateDeal) => {
+      console.log(updateDeal)
+      location.reload()
     })
   }
-    // this._dataService.updateDeal(updateDeal).subscribe(d => {
-    //   this._router.navigate(['/deal']);
-    // });
   }
 
 
