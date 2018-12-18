@@ -13,7 +13,10 @@ export class UsersService {
 
     getUsers() {
         return this._http.get<User[]>(`${this._dbUrl}user/getall`);
+    }    
+
+    deleteUsers(id) {
+        return this._http.delete(`https://savepoint-server.herokuapp.com/user/delete/${id}`);
     }
-    
 
 }
