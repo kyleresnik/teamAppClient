@@ -49,9 +49,9 @@
             <button mat-raised-button color="warn" (click)="deleteProfile(profile.id)" *ngIf="token !== null || undefined">
               Delete </button>
           
-              <app-profile-update *ngIf="createdClicked"></app-profile-update>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <app-profile-update *ngIf="createdClicked" [id]="tempProfileId"></app-profile-update>

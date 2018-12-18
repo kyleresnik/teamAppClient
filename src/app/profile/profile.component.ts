@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Profile } from '../models/profile.model';
 
 @Component({
@@ -16,17 +15,7 @@ export class ProfileComponent implements OnInit {
   tempProfileId: number;
   createdClicked = false;
 
-  constructor(private fb: FormBuilder,
-              private us: UserService,
-              private _ar: ActivatedRoute,
-              private _router: Router) {
-                // this._ar.paramMap.subscribe(p => {
-                //   this.us.getProfile(p.get('id')).subscribe((singleProfile: Profile) => {
-                //     this.profile = singleProfile;
-                //     this.createForm();
-                //   })
-                // })
-              }
+  constructor(private fb: FormBuilder, private us: UserService,) { }
 
   ngOnInit() {
     this.createForm();
@@ -55,11 +44,6 @@ export class ProfileComponent implements OnInit {
     this.createdClicked = !this.createdClicked;
     this.tempProfileId = id;
   }
-  
-    // editProfileForm: FormGroup;
-    // editProfile(profile: Profile) {
-    //   this.
-    // }
 
   deleteProfile(id){
     if (sessionStorage.getItem('currentUser') !== null || undefined){
