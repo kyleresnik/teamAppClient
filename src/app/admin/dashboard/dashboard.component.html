@@ -1,0 +1,22 @@
+<h1>Admin Dashboard</h1>
+<hr>
+
+<h3 #headersthree>Users Table</h3>
+
+<mat-table #usersTable [dataSource]="usersDataSource">
+  <mat-header-row *matHeaderRowDef="usersColumnNames"></mat-header-row>
+  <mat-row *matRowDef="let row1; columns: usersColumnNames;"></mat-row>
+
+  <ng-container matColumnDef="userid">
+    <mat-header-cell *matHeaderCellDef> User Id </mat-header-cell>
+    <mat-cell *matCellDef="let user" matTooltip="{{user.id}}"> 
+      {{user.id}} 
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{user.username}} </mat-cell>
+  </ng-container>
+
+</mat-table>

@@ -30,6 +30,9 @@ import { LoginComponent } from './login/login.component';
 import { DemoMaterialModule } from './material-module';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UsersService } from './admin/services/users.service';
+// import { AdminGuard } from './admin.guard';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     HomeComponent,
     NavComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -68,9 +72,10 @@ import { AuthService } from './services/auth.service';
     MatToolbarModule,
     MatSelectModule,
     DemoMaterialModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, UsersService],
   bootstrap: [AppComponent,]
 })
 export class AppModule { }
