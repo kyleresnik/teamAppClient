@@ -1,4 +1,4 @@
-<div class="login-form" style="text-align: center;">
+<!-- <div class="login-form" style="text-align: center;">
   <div class="transparentBox">
       <h2>Admin Portal</h2>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -27,4 +27,24 @@
           <div *ngIf="error" class="alert alert-danger">{{error}}</div>
       </form>
 </div>
-</div>
+</div> -->
+
+<mat-card>
+    <mat-card-title>Login Baby ;)</mat-card-title>
+    <br>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <input type='text' formControlName="username" matInput placeholder="Username Please">
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-form-field>
+                <input type="password" formControlName="password" matInput placeholder="Password Please">
+            </mat-form-field>
+            <mat-card-actions>
+                <button type="submit" mat-raised-button matTooltip='Smash This!!' aria-label="Button that displays a tooltip when focused or hovered over">Login</button>
+                <button matToolTip="Smash This!!" mat-raised-button [routerLink]='["/register"]'>Register</button>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
