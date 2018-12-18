@@ -30,6 +30,7 @@ import { LoginComponent } from './login/login.component';
 import { DemoMaterialModule } from './material-module';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
+import { UpdateDealComponent } from './update-deal/update-deal.component';
 import { ProfileUpdateComponent } from './profile-update/profile-update.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UsersService } from './admin/services/users.service';
@@ -47,6 +48,7 @@ import { UsersService } from './admin/services/users.service';
     LoginComponent,
     HomeComponent,
     NavComponent,
+    UpdateDealComponent,
     ProfileUpdateComponent,
     DashboardComponent
   ],
