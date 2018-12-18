@@ -38,7 +38,11 @@ export class AuthService {
     }
 
     loggedIn() {
-        return !!localStorage.getItem('sessionToken')
+        if (sessionStorage.getItem('currentUser') === null ){
+            return false
+        } else {
+            return true
+        }
     }
 
     logout() {
