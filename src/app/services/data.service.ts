@@ -31,6 +31,11 @@ export class DataService {
     return this._http.delete(deleteUrl, httpOptions);
   } 
 
+  updateDeal(editFormDetails): Observable<Deal> {
+    let updateUrl = `https://savepoint-server.herokuapp.com/post/update/${editFormDetails.id}`
+    return this._http.put<Deal>(`${updateUrl}`,editFormDetails, httpOptions);
+  }
+
   createDeal(deal) : Observable <Deal[]> {
     return this._http.post<Deal[]>(
       'https://savepoint-server.herokuapp.com/post/newthread',

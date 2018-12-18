@@ -1,0 +1,23 @@
+<h1>Update a Deal.</h1>
+<hr>
+
+<mat-card style="text-align: center;">
+  <div class="example-container">
+    <mat-card-content>
+      <form [formGroup]="dealEditForm" (ngSubmit)="onSubmit()" >
+        <mat-form-field>
+          <input matInput placeholder="Title" type="text" formControlName="title">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Update your deal!" formControlName="text">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" *ngIf="token !== null || undefined">Update Deal</button>
+      </form>
+    </mat-card-content>
+  </div>
+</mat-card>
+
+
+<!-- <a mat-button routerLink="/deal">Back to Deals</a> -->

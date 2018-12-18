@@ -30,6 +30,7 @@ import { LoginComponent } from './login/login.component';
 import { DemoMaterialModule } from './material-module';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
+import { UpdateDealComponent } from './update-deal/update-deal.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,8 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     HomeComponent,
     NavComponent,
+    UpdateDealComponent,
+
   ],
   imports: [
     BrowserModule,
