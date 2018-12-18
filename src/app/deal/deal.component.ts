@@ -56,7 +56,7 @@ export class DealComponent implements OnInit {
   onSubmit() {
     console.log(this.dealForm.value)
     this.data.createDeal(this.dealForm.value).subscribe((createPostFromServer) => {
-      console.log(createPostFromServer)
+      console.log(createPostFromServer), this.getDeals()
     })
   }
 };

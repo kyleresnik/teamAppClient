@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DealComponent } from './deal/deal.component';
-import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from '../app/login/login.component'
 import { RegisterComponent } from './register/register.component';
@@ -32,17 +31,14 @@ const routes: Routes = [
     component: DealComponent
   },
   {
-    path: 'admin',
-    component: AdminComponent,
-    // canActivate: [AuthGuard]
-  },
-  {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dashboard',
     component: DashboardComponent
+    // canActivate: [AuthGuard]
   }
 ];
 

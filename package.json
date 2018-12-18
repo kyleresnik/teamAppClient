@@ -1,6 +1,9 @@
 {
   "name": "red-badge-client",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.11.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
