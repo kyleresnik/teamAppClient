@@ -12,6 +12,7 @@ export class UpdateDealComponent implements OnInit {
   public dealEditForm: FormGroup;
   @Input() id: number;
   private _router: Router
+  token: string;
 
   constructor(private fb: FormBuilder, private ds: DataService) { }
    

@@ -11,6 +11,7 @@ import { UserService } from '../services/user.service';
 export class ProfileUpdateComponent implements OnInit {
   public profileEditForm: FormGroup;
   @Input() id:number;
+  token: string;
 
   constructor(private fb: FormBuilder, private us: UserService) { }
 

@@ -12,7 +12,7 @@ import { User } from '../../models/user.model';
 export class DashboardComponent implements OnInit {
 
   usersDataSource = new MatTableDataSource<any>();
-  private usersColumnNames = ['userid','username', 'actions'];
+  public usersColumnNames = ['userid','username', 'actions'];
   private _dbUrl = "https://savepoint-server.herokuapp.com/"
 
   constructor(private _http: HttpClient, private _usersService: UsersService) { }
