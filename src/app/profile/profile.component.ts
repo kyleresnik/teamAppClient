@@ -13,6 +13,8 @@ export class ProfileComponent implements OnInit {
   public profileForm: FormGroup;
   profile: Profile[];
   token: string;
+  tempProfileId: number;
+  createdClicked = false;
 
   constructor(private fb: FormBuilder,
               private us: UserService,
@@ -47,6 +49,11 @@ export class ProfileComponent implements OnInit {
     this.us.getProfile()
     .subscribe(Profile => this.profile = Profile)
     console.log(this.profile)
+  }
+
+  clickedButton(id) {
+    this.createdClicked = !this.createdClicked;
+    this.tempProfileId = id;
   }
   
     // editProfileForm: FormGroup;
