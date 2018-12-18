@@ -44,13 +44,14 @@
           <h3 mat-subheader>fbUrl</h3>
           <mat-list-item role="listitem">{{ profile.fbUrl }}</mat-list-item>
           
-            <button mat-raised-button color="accent" (click)="updateDeal(profile.id)" *ngIf="token !== null || undefined">
+            <button mat-raised-button color="accent" (click)="clickedButton(profile.id)" *ngIf="token !== null || undefined">
               Update </button>
-            <button mat-raised-button color="warn" (click)="deleteDeal(profile.id)" *ngIf="token !== null || undefined">
+            <button mat-raised-button color="warn" (click)="deleteProfile(profile.id)" *ngIf="token !== null || undefined">
               Delete </button>
           
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <app-profile-update *ngIf="createdClicked" [id]="tempProfileId"></app-profile-update>

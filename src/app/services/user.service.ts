@@ -53,7 +53,7 @@ export class UserService {
           }
 
 
-        updateProfile(id: any): Observable<Profile> {
-            return this.http.put<Profile>(`https://savepoint-server.herokuapp.com/profile/update/${id}`, httpOptions)
+        updateProfile(editFormDetails): Observable<Profile> {
+            return this.http.put<Profile>(`https://savepoint-server.herokuapp.com/profile/update/${editFormDetails.id}`, editFormDetails, httpOptions)
         }
 }

@@ -30,9 +30,9 @@ import { LoginComponent } from './login/login.component';
 import { DemoMaterialModule } from './material-module';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
+import { ProfileUpdateComponent } from './profile-update/profile-update.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UsersService } from './admin/services/users.service';
-// import { AdminGuard } from './admin.guard';
 
 @NgModule({
   declarations: [
@@ -47,6 +47,7 @@ import { UsersService } from './admin/services/users.service';
     LoginComponent,
     HomeComponent,
     NavComponent,
+    ProfileUpdateComponent,
     DashboardComponent
   ],
   imports: [
