@@ -40,12 +40,10 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent
   },
-]
   {
     path: 'dashboard',
     component: DashboardComponent
   }
-
 ];
 
   @NgModule({
