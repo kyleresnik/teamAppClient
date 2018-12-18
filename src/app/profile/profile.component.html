@@ -30,6 +30,7 @@
       <p>{{ profile.bio }}</p>
       <p>{{ profile.twHandle }}</p>
       <p>{{ profile.fbUrl }}</p>
-      <button (click)="deleteDeal(profile.id)" *ngIf="token !== null || undefined"> Delete </button>
+      <button (click)="deleteProfile(profile.id)" *ngIf="token !== null || undefined"> Delete </button>
+      <button (click)="editProfile(profile.id)" *ngIf="token !== null || undefined"> Edit </button>
     </li>
   </ul>

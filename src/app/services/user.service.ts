@@ -34,8 +34,12 @@ export class UserService {
         //     return this.http.put(`` + user.id, user);
         // }
     
-        delete(id: number) {
-            return this.http.delete(`` + id);
+        // delete(id: number) {
+        //     return this.http.delete(`` + id);
+        // }
+
+        deleteProfile(id) {
+            return this.http.delete(`https://savepoint-server.herokuapp.com/profile/delete/${id}`, httpOptions);
         }
 
         createProfile(id) : Observable <Profile[]> {
@@ -43,7 +47,13 @@ export class UserService {
                 `${this._dbUrl}profile/newprofile`,
             id, httpOptions);
         }
+
         getProfile() : Observable <Profile[]> {
             return this.http.get<Profile[]>(`${this._dbUrl}profile/getall`)
           }
+
+
+        updateProfile(id: any): Observable<Profile> {
+            return this.http.put<Profile>(`https://savepoint-server.herokuapp.com/profile/update/${id}`, httpOptions)
+        }
 }
