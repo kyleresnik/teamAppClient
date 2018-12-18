@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 export class UpdateDealComponent implements OnInit {
   public dealEditForm: FormGroup;
   @Input() id: number;
+  token: string;
 
   constructor(private fb: FormBuilder, private ds: DataService) { }
    

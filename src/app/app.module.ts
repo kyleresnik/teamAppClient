@@ -21,7 +21,6 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { DealComponent } from './deal/deal.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 // import { FlexLayoutModule } from '@angular/flex-layout';
@@ -40,7 +39,6 @@ import { UsersService } from './admin/services/users.service';
     AppComponent,
     NavComponent,
     DealComponent,
-    AdminComponent,
     ProfileComponent,
     FooterComponent,
     AboutComponent,
