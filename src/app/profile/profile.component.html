@@ -16,14 +16,6 @@
             <input matInput placeholder="Facebook URL:" formControlName="fbUrl">
           </mat-form-field>
           <br>
-          <mat-form-field>
-            <mat-select placeholder="Gender">
-              <mat-option value="option">Male</mat-option>
-              <mat-option value="option">Female</mat-option>
-              <mat-option value="option">Other</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
           <button mat-raised-button color="primary" type="submit" *ngIf="token !== null || undefined">Confirm Profile</button>
         </form>
       </mat-card-content>
@@ -32,7 +24,7 @@
 
   <mat-grid-tile colspan="8" rowspan="2" class="profileList">
     <mat-card class="profileCard">
-      <mat-card-title>Profiles!</mat-card-title>
+      <mat-card-title>Here's your profile!</mat-card-title>
       <mat-card-content>
         <mat-list *ngFor="let profile of profile">
           <h3 mat-subheader>Bio</h3>
