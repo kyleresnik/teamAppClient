@@ -14,7 +14,7 @@
 - Server Testing Program Used: [Postman](https://www.getpostman.com/apps)
 
 # About
-SavePoint is a project that explores all aspects of React.js Client and a Node.js Server. SavePoint is a site that allows publicly sourced deals and savings found online and locally. Members can sign up, share deals, and is totally GEEK/NERD focused. If your are into video games, vintage tech or any form of techy geeking stuff, SavePoint is your the site you're looking for! 
+SavePoint is a project that explores all aspects of Angular.js Client and a Node.js Server. SavePoint is a site that allows publicly sourced deals and savings found online and locally. Members can sign up, share deals, and is totally GEEK/NERD focused. If your are into video games, vintage tech or any form of techy geeking stuff, SavePoint is your the site you're looking for! 
 
 # Functionality 
 
