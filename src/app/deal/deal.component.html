@@ -33,15 +33,13 @@
   <button type="submit">Submit</button>
 </form> -->
 
-<mat-card style="margin: 5em; padding: 1em;">
-<br>
-  <ul>
-    <li *ngFor="let deal of deal">
-      <p>{{ deal.title }}</p>
-      <p>{{ deal.text }}</p>
-      <button (click)="deleteDeal(deal.id)" *ngIf="token !== null || undefined"> Delete </button>
-      <button (click)="clickedButton(deal.id)" *ngIf="token !== null || undefined"> Update </button>
-    </li>
-  </ul>
+<mat-card class="dealsCard" *ngFor="let deal of deal" style="margin: 5em; padding: 1em;">
+  <mat-card-title>{{ deal.title }}</mat-card-title>
+  <mat-card-content>{{ deal.text }}</mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="deleteDeal(deal.id)" *ngIf="token !== null || undefined"> Delete </button>
+      <button mat-raised-button color="accent" (click)="clickedButton(deal.id)" *ngIf="token !== null || undefined"> Update </button>
+  </mat-card-actions>
 </mat-card>
 <app-update-deal *ngIf="createdClicked" [id]="tempDealId"></app-update-deal>
+
