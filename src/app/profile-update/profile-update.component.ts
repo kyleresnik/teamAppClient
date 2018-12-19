@@ -32,6 +32,7 @@ export class ProfileUpdateComponent implements OnInit {
   onSubmit() {
     this.us.updateProfile(this.profileEditForm.value).subscribe((createProfileFromServer) => {
       console.log(createProfileFromServer)
+      location.reload()
     })
   }
 

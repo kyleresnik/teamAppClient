@@ -56,7 +56,7 @@ export class ProfileComponent implements OnInit {
 
   onSubmit() {
     this.us.createProfile(this.profileForm.value).subscribe((createProfileFromServer) => {
-      console.log(createProfileFromServer)
+      console.log(createProfileFromServer), this.getProfile
     })
   }
 
