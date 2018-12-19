@@ -17,8 +17,12 @@
  
 mat-card {    
     max-width: 50%;    
-    margin: 1em auto;    
+    margin: 9em auto;    
     text-align: center;    
+    background-image: url('http://49.media.tumblr.com/a01ac747cacca4c6d014b0f5e39465ff/tumblr_myjokwPtJd1qcc19mo1_500.gif');
+    background-size: 15em;
+    background-repeat: no-repeat;
+    padding: 6em;
 }    
     
 mat-toolbar-row {    

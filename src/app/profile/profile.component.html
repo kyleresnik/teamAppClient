@@ -1,5 +1,5 @@
-<mat-grid-list cols="12" rowHeight="25em">
-  <mat-grid-tile colspan="4" rowspan="1">
+<mat-grid-list cols="2" rowHeight="27em">
+  <mat-grid-tile colspan="1" rowspan="1">
     <mat-card class="createCard">
       <mat-card-title>Create a Profile!!</mat-card-title>
       <mat-card-content>
@@ -16,23 +16,15 @@
             <input matInput placeholder="Facebook URL:" formControlName="fbUrl">
           </mat-form-field>
           <br>
-          <mat-form-field>
-            <mat-select placeholder="Gender">
-              <mat-option value="option">Male</mat-option>
-              <mat-option value="option">Female</mat-option>
-              <mat-option value="option">Other</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
           <button mat-raised-button color="primary" type="submit" *ngIf="token !== null || undefined">Confirm Profile</button>
         </form>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 
-  <mat-grid-tile colspan="8" rowspan="2" class="profileList">
+  <mat-grid-tile colspan="1" rowspan="1" class="profileList">
     <mat-card class="profileCard">
-      <mat-card-title>Profiles!</mat-card-title>
+      <mat-card-title>My Profile!</mat-card-title>
       <mat-card-content>
         <mat-list *ngFor="let profile of profile">
           <h3 mat-subheader>Bio</h3>

@@ -11,6 +11,10 @@
     border-radius: 8px;
     background-color: rgb(30, 52, 17);
   }
+h3 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
 
   .card {
     display: flex;
@@ -189,4 +193,8 @@ textarea:hover {
 
 #submit:hover {
   color: #e2dedb;
+}
+
+.photo1 {
+  float: left;
 }
